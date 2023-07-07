@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.logo {
+    padding-top: 10px;
+    padding-left: 18px;
+}
+
+#bg {
+    background: rgb(231 216 177);
+}
+
+h1 {
+    padding: 3rem;
+    font-family: 'Cabin Condensed', sans-serif;
+    text-shadow: #1e1e1e;
+    text-shadow: 1px 1px 2px rgb(160, 156, 156);
+}
+
+h2 {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgb(160, 156, 156);
+    font-family: 'Cabin Condensed', sans-serif;
+}
+
+.t1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    max-width: 2000px;
+}
+
+p {
+    text-align: left;
+    font-family: 'Kreon', serif;
+    line-height: 1.7;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgb(160, 156, 156);
+}
+
+.t1 iframe {
+    height: 280px;
+    width: 450px;
+    gap: 18px;
+    padding-top: 20px;
+    border-radius: 9px 9px 9px;
+}
+
+/* vídeos responsivos para mobile */
+
+@media (max-width: 425px) {
+    .t1 iframe {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 499px) {
+    .t1 iframe {
+        width: 100px;
+        height: auto;
+    }
+}
+
+.quadro {
+    width: 360px;
+    height: auto;
+    margin: 30px;
+    border-radius: 7px
+}
+
+@media (max-width: 425px) {
+    .quadro {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 2560px) {
+    .t1 {
+        margin-left: 180px;
+        margin-right: 180px;
+        max-width: 2000px
+    }
+}
+
+/* Barra de navegação */
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cabin Condensed', sans-serif;
+    padding-right: 1.9rem;
+    z-index: 999;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(231 216 177);
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 33px;
+        right: 0px;
+        background: #1e1e1e;
+        transition: 0.6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(240, 240, 240, 0.05);
+    }
+
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+        color: #e7e7e7;
+    }
+
+    #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 4px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+.busca {
+    background: no-repeat center right;
+    padding: 7px;
+    width: 20px;
+    transition: all 0.5s linear;
+}
+
+.busca:focus {
+    width: 80px;
+    border-bottom: solid 1px #ddd;
+    outline: none;
+}
+
+input {
+    color: white;
+    font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    .busca:focus {
+        width: 320px;
+    }
+}
+
+#contato {
+    color: white;
+    background: #1e1e1e;
+    padding: 1.5rem;
+}
